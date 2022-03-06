@@ -1,6 +1,12 @@
 # CAPSTONE
 # TableTop Homebrew creation DJANGO App
 
+#MVP
+Ability for players to signup and have the ability to create documents
+
+# Stretch goal
+Favorite content
+
 
 ## User Stories
 - As a player I would like an app where I can create my own homebrew content
