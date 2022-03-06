@@ -2,12 +2,12 @@
 # TableTop Homebrew creation DJANGO App
 
 #MVP
-Ability for players to signup
-The ability to create documents with image uploads
+- Ability for players to signup
+- The ability to create documents with image uploads
 
 # Stretch goal
-Favorite content
-Commenting/Voting
+- Favorite content
+- Commenting/Voting
 
 
 ## User Stories
