@@ -1,7 +1,7 @@
 # CAPSTONE
 # TableTop Homebrew creation DJANGO App
 
-#MVP
+# MVP
 - Ability for players to signup
 - The ability to create documents with image uploads
 
