@@ -8,6 +8,7 @@
 # Stretch goal
 - Favorite content
 - Commenting/Voting
+- Character sheet creation
 
 
 ## User Stories
@@ -21,7 +22,7 @@
     - Content created
 - Homebrew content
     - Classes
-    - spells
+    - Spells/Abilities
     - Items
     - Races
     - Monsters
