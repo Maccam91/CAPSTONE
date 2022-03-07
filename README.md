@@ -26,9 +26,10 @@
     - Races
     - Monsters
 
-# Model Relation
+# Model Relation / ERD
 
-![image](https://user-images.githubusercontent.com/96030603/156942222-f1c291b8-a198-4dc4-afbf-3e6e83afc733.png)
+![image](https://user-images.githubusercontent.com/96030603/157112291-ba8356c3-9585-4b4e-8f7b-6bd6b4bcccc4.png)
+
 
 # Content Page for creation/
 
