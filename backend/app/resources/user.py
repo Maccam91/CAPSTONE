@@ -1,5 +1,8 @@
 from flask_mongoengine.wtf import model_form
+from flask_mongoengine import MongoEngine
 
+
+db = MongoEngine()
 class User(db.Document):
     email = db.StringField(required=True)
     username = db.StringField(max_length=12)
@@ -10,7 +13,7 @@ class Content(db.EmbeddedDocument):
     lang = db.StringField(max_length=3)
 
 class Post(db.Document):
-    title = db.StringField(max_length=120, required=True, validators=[validators.InputRequired(message='Missing title.'),])
+    # title = db.StringField(max_length=120, required=True, validators=[validators.InputRequired(message='Missing title.'),])
     author = db.ReferenceField(User)
     tags = db.ListField(db.StringField(max_length=30))
     content = db.EmbeddedDocumentField(Content)

@@ -1,10 +1,11 @@
 from flask import Flask, request
-from resources.models import class_api
+# from resources.models import class_api
 from resources.user import User,Content, Post
 from flask_mongoengine import MongoEngine
+from flask_cors import CORS
 
-app = Flask(__name__)
-app.register_blueprint(class_api, url_prefix='/api/v1')
+app = Flask(__name__, static_folder='E:/sei1213/unit4/CAPSTONE/CAPSTONE/frontend', static_url_path='')
+# app.register_blueprint(class_api, url_prefix='/api/v1')
 app.config['MONGODB_SETTINGS']= {
     'db': 'FIRESIDE',
     'host':'127.0.0.1',
