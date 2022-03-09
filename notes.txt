@@ -1,0 +1,20 @@
+routes needed
+'/' - Home routes
+'/user/signup'
+'/user/<id>
+'/classes'
+'/classes/subclasses'
+'/items'
+'/race'
+'/Monster'
+'/spells-abilities'
+list of responsibilites
+1. setup backend
+    -mongoDB setup
+    -routes
+    -creating form for content creation
+    -usermodel-setup/signup
+2. react frontend
+    1. setup views for each routes
+    
+
