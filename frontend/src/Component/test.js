@@ -4,5 +4,7 @@ import axios from 'axios'
 
 function FrontTest(){
 const [testData, setTestData] = useState({})
-
+useEffect(()=>{
+    axios.get('http')
+})
 }

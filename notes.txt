@@ -16,5 +16,6 @@ list of responsibilites
     -usermodel-setup/signup
 2. react frontend
     1. setup views for each routes
-    
+
+mongodb+srv://mcsner:Mikey263991@cluster0.urfml.mongodb.net/FIRESIDE?retryWrites=true&w=majority
 
