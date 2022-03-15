@@ -27,3 +27,44 @@ is_anonymous
 This property should return True if this is an anonymous user. (Actual users should return False instead.)
 get_id()
 This method must return a unicode that uniquely identifies this user, and can be used to load the user from the user_loader callback. Note that this must be a unicode - if the ID is natively an int or some other type, you will need to convert it to unicode.
+
+from flask_mongoengine.wtf import model_form
+from flask_mongoengine import MongoEngine
+from app import db
+
+
+
+class User(db.Document):
+    email = db.StringField(required=True)
+    username = db.StringField(max_length=12)
+    password = db.StringField(min_length=8)
+
+class Content(db.EmbeddedDocument):
+    text = db.StringField()
+    lang = db.StringField(max_length=3)
+
+class Post(db.Document):
+    # title = db.StringField(max_length=120, required=True, validators=[validators.InputRequired(message='Missing title.'),])
+    author = db.ReferenceField(User)
+    tags = db.ListField(db.StringField(max_length=30))
+    content = db.EmbeddedDocumentField(Content)
+
+PostForm = model_form(Post)
+
+def add_post(request):
+    form = PostForm(request.POST)
+    if request.method == 'POST' and form.validate():
+        # do something
+        redirect('done')
+    return render_template('add_post.html', form=form)
+
+    {
+            "_id": uuid.uuid4().hex,
+            "username":request.form.get('username'),
+            "email":request.form.get('email'),
+            "password":request.form.get('password')
+
+        }
+        db.users.insert_one(user)
+        if db.users.find_one({"email": user['email']}):
+            return jsonify({"error": "Email already in use"}), 400

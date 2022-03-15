@@ -1,32 +1,32 @@
 import os
+import pymongo
 from flask import Flask, request, render_template
-
 from flask_mongoengine import MongoEngine
 from flask_mongoengine.wtf import model_form
 from wtforms import validators
 from dotenv import load_dotenv
 from flask_cors import CORS
+from user.models import User
+
 
 load_dotenv()
 URI = os.getenv("MONGO_URI")
 
 app = Flask(__name__, static_folder='E:/sei1213/unit4/CAPSTONE/CAPSTONE/frontend', static_url_path='')
+# app.secret_key = b'\xc3"$T\xb8\xf7\xe5J\x8b0\xad\x08\xee\x9a]\x91'
+client = pymongo.MongoClient(URI)
+db = client.fire_side
 
-app.config['MONGODB_SETTINGS']= {URI or "mongodb://127.0.0.1:27017/FIRESIDE"} 
-# db = MongoEngine(app)
-# db.init_app(app)
-app.config['MONGODB_CONNECT'] = False
-
-
-# Routes
-from user import routes
-# @app.route('/posttest', methods=['POST', 'GET', 'DELETE', 'PUT'])
-# def test():
-#     return render_template('home.html')
 
 @app.route('/')
 def homePage():
-    return {"Hello":["world","my name is", "Michael"]}
+    return render_template('home.html')
+
+@app.route('/user/signup', methods=['POST'])
+def signup():
+ return User().signup()
+# @app.route('/user', method=['GET'])
+
 
 
 

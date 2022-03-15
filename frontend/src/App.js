@@ -1,8 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 import FrontTest from './Component/test';
-import HomePage from './Component/Homepage';
-import {Routes, Route, Link} from 'react-router-dom'
+import SignUpPage from './Component/signup';
+import LoginPage from './Component/login';
+import {Routes, Route, Link, useNavigate} from 'react-router-dom'
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
       </nav>
       <Routes>
       <Route path='/' element={<FrontTest/>}/>
-      <Route path='/signup' element={<HomePage/>}/>
+      <Route path='/signup' element={<SignUpPage/>}/>
+      <Route path='/login' element={<LoginPage/>}/>
       </Routes>
     </div>
   );

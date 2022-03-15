@@ -6,7 +6,7 @@ function FrontTest(){
 const [testData, setTestData] = useState()
 
 useEffect(()=>{
-    axios.get('http://localhost:3000/classes').then(res=>{
+    axios.get('http://localhost:3000/user/signup').then(res=>{
         console.log(res.data.class)
         setTestData(res.data.Class)
     }
